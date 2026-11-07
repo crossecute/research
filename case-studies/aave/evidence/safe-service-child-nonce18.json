@@ -1,0 +1,60 @@
+{
+  "safe": "0x2B99790c35a401be873FA7Eb514D9220736BB1cA",
+  "to": "0x47c71dFEB55Ebaa431Ae3fbF99Ea50e0D3d30fA8",
+  "value": "0",
+  "data": "0xd4d9bdcd0ea9a8fed74bc267e88a5de190ca88a3c63b5963784f50176bfd0f4fb523f8e4",
+  "operation": 0,
+  "gasToken": "0x0000000000000000000000000000000000000000",
+  "safeTxGas": 0,
+  "baseGas": 0,
+  "gasPrice": "0",
+  "refundReceiver": "0x0000000000000000000000000000000000000000",
+  "nonce": 18,
+  "executionDate": "2026-11-03T23:19:59Z",
+  "submissionDate": "2026-11-03T19:23:41.260561Z",
+  "modified": "2026-11-03T23:20:05.372236Z",
+  "blockNumber": 26337523,
+  "transactionHash": "0x776289bb3bfc127f4bfe1a251090c5d781196f55cf4d7984d02b8aeb505bb543",
+  "safeTxHash": "0xf7ebe808a50aaca719180a6ef26daf719421527be4fd25800158f337bb0d52e5",
+  "proposer": "0x35a9842DD99c7fc7Ea66c9acE6f2AF3476F09aE1",
+  "proposedByDelegate": null,
+  "executor": "0x606dC57cd166643760E049609bfd1D8a698D3bAc",
+  "isExecuted": true,
+  "isSuccessful": true,
+  "ethGasPrice": "40369805",
+  "maxFeePerGas": "40369805",
+  "maxPriorityFeePerGas": "3669982",
+  "gasUsed": 90978,
+  "fee": "3672764119290",
+  "payment": "0",
+  "origin": "{}",
+  "dataDecoded": {
+    "method": "approveHash",
+    "parameters": [
+      {
+        "name": "hashToApprove",
+        "type": "bytes32",
+        "value": "0x0ea9a8fed74bc267e88a5de190ca88a3c63b5963784f50176bfd0f4fb523f8e4"
+      }
+    ]
+  },
+  "confirmationsRequired": 2,
+  "confirmations": [
+    {
+      "owner": "0x35a9842DD99c7fc7Ea66c9acE6f2AF3476F09aE1",
+      "submissionDate": "2026-11-03T19:23:41.260561Z",
+      "transactionHash": null,
+      "signature": "0xb2dd305cbedb3cb0ffbcef475937aedff69070441e2240c66ca1b09485bd79e9614ee8fa299d396993be46656a0a66d069a82b1d812e4034db60456fa759b8cd1b",
+      "signatureType": "EOA"
+    },
+    {
+      "owner": "0x606dC57cd166643760E049609bfd1D8a698D3bAc",
+      "submissionDate": "2026-11-03T23:18:57.180787Z",
+      "transactionHash": null,
+      "signature": "0xf3cabd4a6d376c2272e969e27d4c04aaf8b6ee7848ec003ba34160e9e318a3ed5efd1aec810135cb5711759aeab21d8f47b72282dc925b12647599663737c99f1c",
+      "signatureType": "EOA"
+    }
+  ],
+  "trusted": true,
+  "signatures": "0xb2dd305cbedb3cb0ffbcef475937aedff69070441e2240c66ca1b09485bd79e9614ee8fa299d396993be46656a0a66d069a82b1d812e4034db60456fa759b8cd1bf3cabd4a6d376c2272e969e27d4c04aaf8b6ee7848ec003ba34160e9e318a3ed5efd1aec810135cb5711759aeab21d8f47b72282dc925b12647599663737c99f1c"
+}

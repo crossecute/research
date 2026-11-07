@@ -10,6 +10,7 @@ Research behind [`forge-attest`](https://github.com/crossecute/forge-attest): ho
 |---|---|
 | [`research/foundry-msig-proposal-research.md`](research/foundry-msig-proposal-research.md) | Survey of about 55 public repos that use Foundry scripts for Safe multisig work, grouped by style, with a dependency index and a comparison of the five reusable tools (Base `MultisigScript`, Optimism `MultisigTask`, Zeus `MultisigBuilder`, `forge-safe`, `safe-utils`). Research date 2026-11-04. |
 | [`case-studies/frax/Frax_Forge_Attest_Case_Study.md`](case-studies/frax/Frax_Forge_Attest_Case_Study.md) | Case study of `forge-attest` on Frax's Aurora OFT multisig operations: five Fraxtal-to-Aurora batches (30 calls, Safe nonces 554 to 558) reproduced and hash-verified in one 69-second CI run, a comparison with the current manual review steps, and a proposed rollout. |
+| [`case-studies/aave/Aave_Forge_Attest_Case_Study.md`](case-studies/aave/Aave_Forge_Attest_Case_Study.md) | Case study of `forge-attest` on the Aave v4 Risk Council Safe, which the research found through the v4 risk stewards repo: Ethereum nonce 447 rebuilt from a Foundry script, hash-verified against the executed transaction, reproduced through a captured `safe-utils` proposal, and checked through both nested approvals. |
 
 Findings that matter for `forge-attest`:
 

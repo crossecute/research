@@ -1,0 +1,60 @@
+{
+  "attested": true,
+  "layout": "runs",
+  "producer": {
+    "repo": "https://github.com/crossecute/forge-attest-example-aave-v4-steward",
+    "commit": "d0e88260f13adae4e020d6378087d66f72478bd6"
+  },
+  "toolchain": {
+    "forge": "1.8.1",
+    "forge_commit": "982849d3140c01fd3b72905759581a132df7aa98",
+    "cast": "1.8.1",
+    "producer_solc": "0.8.28"
+  },
+  "runs": [
+    {
+      "script": "script/ProposeRiskCouncilTx.s.sol:ProposeRiskCouncilTx",
+      "env": {
+        "PRIVATE_KEY": "1"
+      },
+      "rpc_env": "MAINNET_RPC_URL",
+      "chain_id": "1",
+      "block": "26337525",
+      "fork_block": "26337525",
+      "sig": "",
+      "senders": [],
+      "written": [],
+      "sender_transactions": [],
+      "capture": "safe-utils"
+    }
+  ],
+  "claims": [
+    {
+      "output_path": "captured/nonce447.json",
+      "run": 0,
+      "attested": true,
+      "safe": {
+        "address": "0x47c71dFEB55Ebaa431Ae3fbF99Ea50e0D3d30fA8",
+        "nonce": "447",
+        "network": "ethereum",
+        "version": "1.3.0"
+      },
+      "chain_id": "1",
+      "live": true,
+      "hashes": {
+        "output_sha256": "37f6e7c1db2939f5403baf09f52570b01e9fb5033053dd58b799d7e2587a02af",
+        "canonical_sha256": "ef44057e9ceb6bd572b849d9fa56cd111882290ff1c50c5c289eb14deae15d10",
+        "domain": "0x22d89b177dc651d0fe06b69db3e9d33dd4162495e3886a3908375584464f8972",
+        "message": "0x13a61dcda96b66e0c3a4ec869131a88f42f8d23825d4083eaf840578e2f33874",
+        "safe_tx": "0x0ea9a8fed74bc267e88a5de190ca88a3c63b5963784f50176bfd0f4fb523f8e4",
+        "safe_tx_solidity": "0x0ea9a8fed74bc267e88a5de190ca88a3c63b5963784f50176bfd0f4fb523f8e4",
+        "safe_tx_live": "0x0ea9a8fed74bc267e88a5de190ca88a3c63b5963784f50176bfd0f4fb523f8e4"
+      },
+      "nested": null,
+      "proposal": null,
+      "url": "https://app.safe.global/transactions/tx?safe=eth:0x47c71dFEB55Ebaa431Ae3fbF99Ea50e0D3d30fA8&id=multisig_0x47c71dFEB55Ebaa431Ae3fbF99Ea50e0D3d30fA8_0x0ea9a8fed74bc267e88a5de190ca88a3c63b5963784f50176bfd0f4fb523f8e4",
+      "failures": []
+    }
+  ],
+  "failures": []
+}
