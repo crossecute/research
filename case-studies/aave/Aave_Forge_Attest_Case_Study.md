@@ -4,9 +4,11 @@
 
 The Aave v4 steward script simulates the proposed updates, can write a state diff, and uses `safe-utils` to sign and post a MultiSend batch to the Safe Transaction Service. The public flow leaves reviewers to verify independently that the full transaction at the intended Safe and nonce matches the source they reviewed. One of the child Safe approvals for Risk Council nonce 447 carries only the parent hash, so its calldata gives signers no parameter values to review. This assessment covers the published script and the recorded approvals. [1, 3, 5]
 
-## What Forge Attest adds
+## What signers trust with Forge Attest
 
-Forge Attest reruns a pinned producer and derives the complete Safe transaction hash. With `--require-live`, it requires a match against the service record for the intended Safe and nonce. It also derives each child approval from the verified parent, so child signers can check both the parent transaction and their own approval hash. The demo uses v1.4.0 to reproduce Ethereum nonce 447, executed on 2026-11-03, and verify both child approvals. It also intercepts the demo's `safe-utils` request locally and verifies that it yields the same parent hash. [1, 3, 4, 6]
+Forge Attest shifts trust in the proposal to the reviewed script, its checked-in claim, and the CI run that verifies them. The script and claim define the expected transaction. CI reruns the pinned script and records the full Safe transaction hash. Before approving, signers can check that the proposal at the intended Safe and nonce matches that hash. Running with `--require-live` makes the Safe Transaction Service comparison mandatory. [3, 4, 6]
+
+Forge Attest derives each child approval from the same parent transaction, so child signers can check both hashes. The demo uses v1.4.0 to reproduce Ethereum nonce 447, executed on 2026-11-03, and verify both child approvals. It also intercepts the demo's `safe-utils` request locally and verifies that it yields the same parent hash. [1, 3, 4, 6]
 
 ## How the research found this Safe
 
