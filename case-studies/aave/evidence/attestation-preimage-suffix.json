@@ -1,0 +1,64 @@
+{
+  "attested": true,
+  "layout": "runs",
+  "producer": {
+    "repo": "https://github.com/crossecute/forge-attest-example-aave-v4-steward",
+    "commit": "77886cb0653f9cc64d0cb74ea5119f7d5a9e2c68"
+  },
+  "toolchain": {
+    "forge": "1.8.1",
+    "forge_commit": "982849d3140c01fd3b72905759581a132df7aa98",
+    "cast": "1.8.1",
+    "producer_solc": "0.8.28"
+  },
+  "runs": [
+    {
+      "script": "script/BuildRiskCouncilTx.s.sol:BuildRiskCouncilTx",
+      "env": {},
+      "rpc_env": "",
+      "chain_id": "",
+      "block": "",
+      "fork_block": "",
+      "sig": "",
+      "senders": [],
+      "written": [
+        "out/risk-council-tx.json"
+      ],
+      "sender_transactions": []
+    }
+  ],
+  "claims": [
+    {
+      "output_path": "out/risk-council-tx.json",
+      "run": 0,
+      "attested": true,
+      "safe": {
+        "address": "0x47c71dFEB55Ebaa431Ae3fbF99Ea50e0D3d30fA8",
+        "nonce": "447",
+        "network": "ethereum",
+        "version": "1.3.0"
+      },
+      "chain_id": "1",
+      "live": true,
+      "hashes": {
+        "output_sha256": "0db0706c76fd3810aee6c2f6c668f7c1b845176d0c849a8fe5ecf5c119847212",
+        "canonical_sha256": "ef44057e9ceb6bd572b849d9fa56cd111882290ff1c50c5c289eb14deae15d10",
+        "domain": "0x22d89b177dc651d0fe06b69db3e9d33dd4162495e3886a3908375584464f8972",
+        "message": "0x13a61dcda96b66e0c3a4ec869131a88f42f8d23825d4083eaf840578e2f33874",
+        "safe_tx": "0x0ea9a8fed74bc267e88a5de190ca88a3c63b5963784f50176bfd0f4fb523f8e4",
+        "safe_tx_solidity": "0x0ea9a8fed74bc267e88a5de190ca88a3c63b5963784f50176bfd0f4fb523f8e4",
+        "safe_tx_live": "0x0ea9a8fed74bc267e88a5de190ca88a3c63b5963784f50176bfd0f4fb523f8e4"
+      },
+      "nested": {
+        "safe": "0xb291232F480F41c75802C4a60F1D2AC03404Afef",
+        "nonce": "205",
+        "approval": "preimage-suffix",
+        "safe_tx": "0xcce0f737311aecf1b4a54acae4d57231d60c435e764e3cbc924a9a4a15f707cb"
+      },
+      "proposal": null,
+      "url": "https://app.safe.global/transactions/tx?safe=eth:0x47c71dFEB55Ebaa431Ae3fbF99Ea50e0D3d30fA8&id=multisig_0x47c71dFEB55Ebaa431Ae3fbF99Ea50e0D3d30fA8_0x0ea9a8fed74bc267e88a5de190ca88a3c63b5963784f50176bfd0f4fb523f8e4",
+      "failures": []
+    }
+  ],
+  "failures": []
+}
