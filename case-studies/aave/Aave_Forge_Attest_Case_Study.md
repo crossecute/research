@@ -6,7 +6,11 @@ The Aave v4 steward script simulates the proposed updates, can write a state dif
 
 ## What signers trust with Forge Attest
 
-Forge Attest shifts trust in the proposal to the reviewed script, its checked-in claim, and the CI run that verifies them. The script and claim define the expected transaction. CI reruns the pinned script and records the full Safe transaction hash. Before approving, signers can check that the proposal at the intended Safe and nonce matches that hash. Running with `--require-live` makes the Safe Transaction Service comparison mandatory. [3, 4, 6]
+Treat the proposer and queued transaction as potentially compromised. The reviewed script and checked-in claim define the expected transaction, and trusted CI reruns the pinned script and records its full Safe transaction hash. With `--require-live`, Forge Attest requires the service record at the intended Safe and nonce to match. When used for signing, `--attest` builds the signing data from the verified transaction. [3, 4, 6]
+
+Require a human signer to review the script, claim, and CI evidence and check the exact hash they are about to sign. Treat any AI agent's review of the queued transaction or RPC dependency as potentially compromised. The signer performs these checks without AI assistance.
+
+A fork gives the script a fixed starting state, including for a proposal still awaiting approval. The capture claim relies on its RPC provider for that state. A provider can return incorrect state even at a pinned block, so a human reviewer must vet the provider and confirm the intended chain and fork block. [3, 6]
 
 Forge Attest derives each child approval from the same parent transaction, so child signers can check both hashes. The demo uses v1.4.0 to reproduce Ethereum nonce 447, executed on 2026-11-03, and verify both child approvals. It also intercepts the demo's `safe-utils` request locally and verifies that it yields the same parent hash. [1, 3, 4, 6]
 
