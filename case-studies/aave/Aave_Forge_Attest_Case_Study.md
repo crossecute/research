@@ -1,8 +1,12 @@
 # Forge Attest for Aave v4 Risk Council operations
 
-Recreating Ethereum Safe nonce 447 from a Foundry script that uses Aave's published addresses
+## Gap in the public proposal flow
 
-The Aave v4 Risk Council Safe executed nonce 447 on 2026-11-03. The research on Foundry multisig proposals found the Safe and the script flow that acts through it. The demo rebuilds nonce 447 from a short script, and Forge Attest derives the same Safe transaction hash that the Safe executed. It also reproduces the transaction from a script that proposes through `safe-utils`, and it checks the two Safes that approved it. [1, 3, 4, 7]
+The Aave v4 steward script simulates the proposed updates, can write a state diff, and uses `safe-utils` to sign and post a MultiSend batch to the Safe Transaction Service. The public flow leaves reviewers to verify independently that the full transaction at the intended Safe and nonce matches the source they reviewed. One of the child Safe approvals for Risk Council nonce 447 carries only the parent hash, so its calldata gives signers no parameter values to review. This assessment covers the published script and the recorded approvals. [1, 3, 5]
+
+## What Forge Attest adds
+
+Forge Attest reruns a pinned producer and derives the complete Safe transaction hash. With `--require-live`, it requires a match against the service record for the intended Safe and nonce. It also derives each child approval from the verified parent, so child signers can check both the parent transaction and their own approval hash. The demo uses v1.4.0 to reproduce Ethereum nonce 447, executed on 2026-11-03, and verify both child approvals. It also intercepts the demo's `safe-utils` request locally and verifies that it yields the same parent hash. [1, 3, 4, 6]
 
 ## How the research found this Safe
 
@@ -11,12 +15,6 @@ The research surveyed public repos where a Foundry script builds, proposes or ex
 The script's `run(broadcastToSafe, generateDiffReport, skipTimelock)` simulates the steward calls, can write a diff report of protocol state before and after, and can propose one MultiSend batch. On a chain with no registered MultiSend, such as Arc, it only prints calldata. The research notes that this is a small repo and not Aave's main governance flow, which uses per-proposal Foundry scripts for Aave Governance V3 instead. [5, 7]
 
 The research took the Safe from `RISK_COUNCIL()` on the steward: `0x47c71dFEB55Ebaa431Ae3fbF99Ea50e0D3d30fA8` on Ethereum, threshold 2 of 2 owners. It then matched executed transactions on that Safe against the calls the script builds. Nonce 447 matched at the *selectors* level: the same target and selectors, with arguments not checked. The demo raises that to a byte-for-byte match against the executed calldata. [1, 3, 7]
-
-## The existing proposal process
-
-The steward script simulates each category of update, then proposes a single MultiSend batch through `safe-utils`. The library signs with a private key, a Ledger or a Trezor through `cast`, and posts the request to the Safe Transaction Service. [5, 7]
-
-That path produces a correct transaction when the script is run with the intended values. The remaining question for a signer is whether the transaction they are asked to sign is exactly the one the reviewed source produces. Forge Attest answers that by rebuilding the transaction and comparing its full Safe hash. This describes public code paths. It is not an account of how Aave's Risk Council reviews or signs. [3, 5]
 
 ## What nonce 447 does
 
